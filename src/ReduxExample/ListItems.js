@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import "./styles.css"
 class ListItems extends React.PureComponent {
     render() {
         console.log(this.props.allItems,"allItems")
@@ -15,9 +15,9 @@ class ListItems extends React.PureComponent {
                 </thead>
                 {this.props.allItems.map(item => {
                 return <tr>
-                    <td>{item.id}</td>
-                    <td>{item.userId}</td>
-                    <td>{item.title}</td>
+                        <td>{item.id}</td>
+                        <td>{item.userId}</td>
+                        <td>{item.title}</td>
                     </tr>
                 })}
               </table>

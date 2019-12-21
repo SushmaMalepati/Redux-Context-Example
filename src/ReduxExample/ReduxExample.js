@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AddItem from "./AddItem";
 import ListItems from "./ListItems";
 import DeleteItem from "./DeleteItem";
+import EditItems from "./EditItems";
 import { connect } from "react-redux";
 import { getAllItems } from "./redux/actions"
-
+import "./styles.css"
+import {
+    Link
+  } from "react-router-dom";
 class ReduxExample extends React.PureComponent {
     componentDidMount(){
       this.props.getAllItems()
@@ -14,12 +18,14 @@ class ReduxExample extends React.PureComponent {
         return (
             <div>
               <br/>
+              <ListItems allItems={this.props.allItems}/>
+              <br/>
               <AddItem />
               <br/>
                <DeleteItem /> 
                <br />
-              <ListItems allItems={this.props.allItems}/>
-              {/* <EditItems /> */}
+              <br />
+              <EditItems />
             </div>
         );
     }

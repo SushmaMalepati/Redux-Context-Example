@@ -1,4 +1,4 @@
-import {ADD_ITEM, DELETE_ITEM, FETCH_ITEMS} from "./actionTypes"
+import {ADD_ITEM, DELETE_ITEM, FETCH_ITEMS,EDIT_ITEM,SAVE_ITEM} from "./actionTypes"
 
 
 export const getAllItems = () => async dispatch => {
@@ -16,4 +16,16 @@ export const addItem = addObj => ({
 export const deleteItem = deleteId => ({
     type:DELETE_ITEM,
     payload:deleteId
+})
+
+export const editItems = (editId = 1)  => {
+    console.log(editId,"editId")
+return {
+    type:EDIT_ITEM,
+    payload:editId
+}}
+
+export const SaveEditedItem = editedObj => ({
+    type:SAVE_ITEM,
+    payload:editedObj
 })
